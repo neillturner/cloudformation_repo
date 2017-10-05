@@ -1,0 +1,21 @@
+---
+driver:
+  name: Cloudformation
+  stack_name: mystack
+  template_file: TestSecurityGroup.template
+  change_set_name: mystack-cs
+  change_set_template_file: TestSecurityGroupCs.template
+
+provisioner:
+  name: Cloudformation
+
+platforms:
+  - name: test
+    driver:  Cloudformation
+
+suites:
+  - name: default
+#    driver_config:
+#      ssh_key: /mykeys/mykey.pem
+#      username: root
+#      hostname: '10.53.191.70'
